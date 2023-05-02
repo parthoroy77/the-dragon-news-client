@@ -1,0 +1,20 @@
+.learn-more{
+    height: 500px;
+    background-image: url(../../../assets/bg.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+.learn-more h2{
+    font-size: 35px;
+    line-height: 45px;
+}
+.learn-more p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
