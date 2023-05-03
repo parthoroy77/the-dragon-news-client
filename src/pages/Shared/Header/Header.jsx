@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png'
 import moment from 'moment';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import Marquee from 'react-fast-marquee';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
+import NavigationBar from '../NavigationBar/NavigationBar';
 const Header = () => {
+    const { user } = useContext(AuthContext);
     return (
-        <Container className='mb-5'>
+        <Container className=''>
             <div className='text-center'>
                 <img src={logo} alt="" />
                 <p className='text-secondary'><small>Journalism without fear or favour</small></p>
@@ -15,26 +20,6 @@ const Header = () => {
                 <Button variant='danger'>Latest</Button>
                 <Marquee pauseOnHover speed={100}>Journalism without fear or favour Journalism without fear or favour</Marquee>
             </div>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-                <Container>
-                    
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto">
-                            <Nav.Link href="">Home</Nav.Link>
-                            <Nav.Link href="">About</Nav.Link>
-                            <Nav.Link href="">Career</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                        </Nav>
-                        <Nav className='d-flex align-items-center'>
-                            <Nav.Link href="">Profile</Nav.Link>
-                            <Nav.Link eventKey={2} href="">
-                                <Button variant='secondary'>Login</Button>
-                            </Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
         </Container>
     );
 };
